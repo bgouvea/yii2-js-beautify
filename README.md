@@ -1,6 +1,6 @@
-CodeMirror
+Js-beautify
 ==========
-CodeMirror extension for Yii2
+This little beautifier will reformat and reindent bookmarklets, ugly JavaScript, unpack scripts packed by Dean Edward’s popular packer, as well as deobfuscate scripts processed by javascriptobfuscator.com.  Extension for Yii2.
 
 [![Yii2](https://img.shields.io/badge/Powered_by-Yii_Framework-green.svg?style=flat)](http://www.yiiframework.com/)
 
@@ -12,13 +12,13 @@ The preferred way to install this extension is through [composer](http://getcomp
 Either run
 
 ```
-php composer.phar require --prefer-dist leandrogehlen/yii2-codemirror "*"
+php composer.phar require --prefer-dist brunohenriquebh/yii2-js-beautify "*"
 ```
 
 or add
 
 ```
-"leandrogehlen/yii2-codemirror": "*"
+"brunohenriquebh/yii2-js-beautify": "*"
 ```
 
 to the require section of your `composer.json` file.
@@ -46,41 +46,3 @@ use leandrogehlen\codemirror\CodeMirror;
 ?>
 ```
 
-By default, only core javascript and css files are registered:
-
-- ```lib/codemirror.js```
-- ```lib/codemirror.css```
-
-If it is necessary adds other resource files, then should be used the 
-[Dependency Injection](https://github.com/yiisoft/yii2/blob/master/docs/guide/concept-di-container.md) concept.
-
-Example:
-
-I want to use ```php``` mode in the codemirror editor 
-
-```php
-  
-  //config/web.php
-  
-  $config = [
-      'id' => 'my-app',
-      'components' => [
-        ...
-      ]
-      ...
-  ]
-  
-  Yii::$container->set('leandrogehlen\codemirror\CodeMirrorAsset',[
-      'js' => [
-          'mode/htmlmixed/htmlmixed.js',
-          'mode/xml/xml.js',
-          'mode/javascript/javascript.js',
-          'mode/clike/clike.js',
-          'mode/php/php.js',
-      ]
-  ]);
-  
-  
-  return $config;
-  
-```
