@@ -6,7 +6,7 @@
  */
 
 namespace brunohenriquebh\jsbeautify;
-use Yii;
+
 use yii\web\AssetBundle;
 
 /**
@@ -17,7 +17,7 @@ use yii\web\AssetBundle;
  */
 class JsBeautifyAsset extends AssetBundle
 {
-    public $sourcePath = '@npm/js-beautify';
+    public $sourcePath = '@npm/js-beautify/js/lib';
 
     /**
      * Register required assets
